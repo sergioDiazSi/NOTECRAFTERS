@@ -1,0 +1,137 @@
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: #00a8e8;
+    text-align: center;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+
+label, button{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+}
+table{
+    font-family: 'Montserrat', sans-serif;
+}
+
+footer {
+    background-color: #f8f8f8;
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+  }
+
+.custom-table {
+    font-size: 14px;
+  }
+  
+  .custom-table thead th {
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .custom-table tbody td {
+    vertical-align: middle;
+  }
+  
+  .custom-table tbody tr:nth-child(odd) {
+    background-color: #f2f2f2;
+  }
+  
+  .custom-table tbody tr:hover {
+    background-color: #e6e6e6;
+  }
+  
+  .custom-table input.form-control,
+  .custom-table textarea.form-control {
+    width: 100%;
+  }
+  
+  .custom-table .btn {
+    font-size: 14px;
+  }
+  
+  .custom-table .fa-pen-to-square,
+  .custom-table .fa-trash {
+    font-size: 18px;
+  }
+  
+  .custom-form {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+  }
+
+  .custom-form .form-group {
+    margin-bottom: 15px;
+  }
+
+  .custom-form .form-label {
+    font-weight: bold;
+  }
+
+  .custom-form .form-control {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .custom-form .btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    background-color: #00a8e8;
+    color: #fff;
+  }
+
+  .custom-form .btn:hover {
+    background-color: #0052b3;
+  }
+
+
+
+#title-animation {
+    overflow: hidden;
+    white-space: nowrap; 
+  }
+  
+  .btn-editar {
+    background-color: #00a8e8;
+    color: #fff;
+  }
+  
+  .btn-editar:hover {
+    background-color: #0052b3;
+  }
+  .floating-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  .panel-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .btn-cancelar {
+    margin-left: 10px; /* Ajusta el valor según el margen que desees */
+  }

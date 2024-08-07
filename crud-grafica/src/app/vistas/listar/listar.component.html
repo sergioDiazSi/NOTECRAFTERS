@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NoteCrafters</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container mt-5">
+    <h1 class="text-center mb-4" id="title-animation">NoteCrafters</h1>
+    <div class="row">
+        <form class="col-md-4 custom-form">
+            <div class="form-group">
+              <label for="titulo" class="form-label">Ingrese título de la nueva nota:</label>
+              <input [(ngModel)]="nuevoTitulo" name="titulo" type="text" class="form-control" id="titulo" placeholder="Título" required>
+            </div>
+            <div class="form-group">
+              <label for="descripcion" class="form-label">Descripción de la nota:</label>
+              <textarea [(ngModel)]="nuevaDescripcion" name="descripcion" class="form-control" id="descripcion" rows="3" required></textarea>
+            </div>
+            <button (click)="agregarNota()" class="btn btn-primary">Agregar Nota</button>
+          </form>          
+      <div class="col-md-8 p-4">
+        <table class="table table-bordered table-striped table-hover custom-table">
+            <thead class="table-light">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Título de la nota</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Acciones</th>
+              </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let nota of notas">
+              <td>{{ nota.id }}</td>
+              <td *ngIf="editId !== nota.id">{{ nota.titulo }}</td>
+              <td *ngIf="editId === nota.id">
+                <input [(ngModel)]="editTitulo" name="editTitulo" type="text" class="form-control" />
+              </td>
+              <td *ngIf="editId !== nota.id">{{ nota.descripcion }}</td>
+              <td *ngIf="editId === nota.id">
+                <textarea [(ngModel)]="editDescripcion" name="editDescripcion" class="form-control" rows="3"></textarea>
+              </td>
+              <td>
+                <div class="d-flex justify-content-center align-items-center">
+                  <div *ngIf="editId !== nota.id" class="me-2">
+                    <button (click)="editarNota(nota.id)" class="btn btn-small btn-editar"><i class="fa-solid fa-pen-to-square"></i></button>
+                  </div>
+                  <div *ngIf="editId === nota.id" class="me-2">
+                    <button (click)="guardarEdicion(nota.id)" class="btn btn-small btn-success">Guardar</button>
+                    <button (click)="cancelarEdicion()" class="btn btn-small btn-secondary">Cancelar</button>
+                  </div>
+                  <button (click)="confirmarEliminarNota(nota.id)" class="btn btn-small btn-danger"><i class="fa-solid fa-trash"></i></button>
+                  
+                </div>
+              </td>
+                            
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="floating-panel" *ngIf="notaAEliminarId !== null">
+      <div class="panel-content">
+        ¿Estás seguro de que deseas eliminar esta nota?
+        <button (click)="eliminarConfirmado()" class="btn btn-danger btn-sm">Aceptar</button>
+        <button (click)="cancelarEliminar()" class="btn btn-secondary btn-sm btn-cancelar">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</body>
+<footer>
+    <div class="footer-1">
+        Contacto <br>
+Puedes ponerte en contacto a través del siguiente email: <br>
+sergiodiazsifuentes@gmail.com
+
+
+
+    </div>
+    <div class="footer-2">
+        © Copyright 2023 por Sergio Diaz
+    </div>
+    </footer>
+    
+</html>
+
+
